@@ -1,50 +1,94 @@
 Requerimientos funcionales
-RF-001 - Consultar disponibilidad por materia
-ID: RF-001
 
-Nombre: Consultar disponibilidad por materia
+RF-001 — Consultar disponibilidad de tutorías
 
-Actor: Estudiante
+Campo Contenido
 
-Descripción: El sistema debe permitir al estudiante consultar los espacios de tutoría disponibles para una materia seleccionada.
+ID RF-001
 
-Resultado esperado: Se muestran los espacios de tutoría disponibles asociados con la materia seleccionada.
+Nombre Consultar disponibilidad de tutorías
 
-Fuente: El estudiante necesita conocer qué tutor atiende esa materia y qué espacios de tutoría siguen disponibles. Fuente F-01 y F-03 del mini proyecto Tutorías U.
+Actor Estudiante
 
-Método de verificación: Seleccionar una materia y comprobar que se muestran únicamente los espacios disponibles correspondientes a esa materia.
+Descripción El sistema debe permitir al estudiante consultar los espacios de tutoría disponibles para una materia seleccionada.
+
+Resultado
+
+esperado El estudiante puede visualizar los espacios de tutoría disponibles para la materia seleccionada.
+
+Fuente H-04, F-03 — Entrevista a estudiante. El estudiante manifiesta incertidumbre sobre si el horario consultado continúa disponible al momento de realizar la solicitud.
+
+Método de
+
+verificación Seleccionar una materia y consultar sus espacios de tutoría. Comprobar que se muestren los espacios disponibles para esa materia.
 
 
 
-RF-002 - Crear una reserva
-ID: RF-002
 
-Nombre: Crear una reserva
 
-Actor: Estudiante
 
-Descripción: El sistema debe permitir al estudiante crear una reserva para un espacio de tutoría disponible.
 
-Resultado: La reserva queda registrada y el sistema muestra una confirmación visible de la operación.
 
-Fuente: El estudiante necesita saber inmediatamente si la reserva quedó confirmada. Fuente F-03 del mini proyecto Tutorías U.
 
-Método de verificación: Seleccionar un espacio disponible, crear la reserva y comprobar que la reserva queda registrada y se muestra una confirmación visible.
 
-RF-003 - Cancelar una reserva propia
-ID: RF-003
 
-Nombre: Cancelar una reserva propia
 
-Actor: Estudiante
+RF-002 — Registrar una solicitud de reserva
 
-Descripción: El sistema debe permitir al estudiante cancelar una reserva propia que se encuentre activa antes del inicio de la sesión.
+Campo Contenido
 
-Resultado esperado: La reserva queda cancelada y el espacio de tutoría vuelve a estar disponible.
+ID RF-002
 
-Fuente: El estudiante puede cancelar únicamente sus propias reservas activas antes del inicio de la sesión y, al cancelarse una reserva, el espacio vuelve a estar disponible. Fuentes RN-07 y RN-09 del mini proyecto Tutorías U.
+Nombre Registrar una solicitud de reserva
 
-Método de verificación: Seleccionar una reserva propia activa antes del inicio de la sesión, cancelarla y comprobar que la reserva queda cancelada y el espacio vuelve a estar disponible.
+Actor Estudiante
+
+Descripción El sistema debe permitir al estudiante registrar una solicitud de reserva para un espacio de tutoría disponible.
+
+Resultado
+
+esperado La solicitud de reserva queda registrada para el espacio de tutoría seleccionado.
+
+Fuente H-03, F-02 — Observación del proceso. Se identificó que el proceso actual requiere varios pasos manuales y no cuenta con un mecanismo centralizado de seguimiento.
+
+Método de
+
+verificación Seleccionar un espacio disponible y realizar una solicitud de reserva. Comprobar que la solicitud quede registrada en el sistema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RF-003 — Consultar sesiones confirmadas
+
+Campo Contenido
+
+ID RF-003
+
+Nombre Consultar sesiones confirmadas
+
+Actor Tutor/a
+
+Descripción El sistema debe permitir al tutor o tutora consultar las sesiones de tutoría que tiene confirmadas.
+
+Resultado
+
+esperado El tutor o tutora puede consultar sus sesiones de tutoría confirmadas.
+
+Fuente H-05, F-04 — Entrevista a tutor. Se identificó que la información de las sesiones se encuentra distribuida en diferentes canales de comunicación.
+
+Método de
+
+verificación Ingresar como tutor/a y consultar las sesiones confirmadas. Comprobar que se muestren las sesiones que le corresponden.
 
 
 
@@ -54,55 +98,73 @@ Método de verificación: Seleccionar una reserva propia activa antes del inicio
 
 Requerimientos no funcionales
 
+RNF-001 — Consistencia ante solicitudes simultáneas
 
+Campo Contenido
 
+ID RNF-001
 
-RNF-001 - Accesibilidad
-ID: RNF-001
+Atributo Consistencia e integridad de las reservas
 
-Atributo: Accesibilidad
+Escenario /
 
-condición: Cuando el usuario utilice las vistas principales del sistema, estas deben permitir navegación mediante teclado.
+condición Dos estudiantes realizan una solicitud para el mismo espacio de tutoría disponible de manera simultánea.
 
-Métrica: Navegación mediante teclado y uso correcto.
+Métrica Cantidad de reservas confirmadas para un mismo espacio de tutoría.
 
-criterio: Las vistas principales deben ser navegables mediante teclado y los controles de formulario deben tener etiquetas asociadas.
+Umbral / criterio Un mismo espacio de tutoría no debe quedar asignado a más de una reserva confirmada.
 
-Fuente: Criterio RNF-02 de los criterios no funcionales didácticos del mini proyecto Tutorías U.
+Fuente H-01, F-01 — Nota de coordinación. Se identificó riesgo de colisión cuando se procesan solicitudes que coinciden en el tiempo.
 
-Método de verificación: Navegar por las vistas principales utilizando únicamente el teclado y comprobar que los controles pueden utilizarse correctamente y que los campos de formulario poseen etiquetas asociadas.
+Método de
 
-
-
-RNF-002 - Seguridad
-ID: RNF-002
-
-Atributo: Seguridad
-
-condición: Cuando el sistema gestione usuarios y rutas protegidas, las contraseñas deben estar protegidas y las acciones protegidas deben requerir autenticación y autorización.
-
-Métrica: Almacenamiento de contraseñas y control de acceso a rutas protegidas.
-
-criterio: Las contraseñas no deben almacenarse en texto plano y las rutas protegidas deben requerir autenticación y autorización según el rol correspondiente.
-
-Fuente: Criterio RNF-04 y regla RN-10 del mini proyecto Tutorías U.
-
-Método de verificación: Revisar el almacenamiento de las contraseñas y comprobar que no están en texto plano. Intentar acceder a una ruta protegida sin autenticación y con un rol no autorizado, comprobando que el acceso sea rechazado.
+verificación Realizar dos solicitudes simultáneas sobre el mismo espacio de tutoría y comprobar que no se generen dos reservas confirmadas para el mismo espacio.
 
 
 
 
-RNF-003 - Usabilidad
-ID: RNF-003
 
-Atributo: Usabilida
 
-condición: Cuando el usuario realice una operación en los flujos principales del sistema, el sistema debe informar el estado de la operación.
 
-Métrica: Presencia de mensajes de carga, éxito y error en los flujos principales.
 
-criterio: Los flujos principales deben mostrar un estado de carga, un mensaje de éxito cuando la operación se complete correctamente y un mensaje de error cuando la operación falle.
 
-Fuente: Criterio RNF-01 de los criterios no funcionales didácticos del mini proyecto Tutorías U.
 
-Método de verificación: Ejecutar una operación de consulta o reserva, comprobar que se muestra el estado de carga durante el proceso y verificar que se muestra un mensaje de éxito cuando la operación finaliza correctamente. Repetir la prueba provocando un error y comprobar que se muestra un mensaje de error comprensible.
+
+
+
+RNF-002 — Cumplimiento del límite de reservas activas
+
+Campo Contenido
+
+ID RNF-002
+
+Atributo Integridad de las reglas de negocio
+
+Escenario /
+
+condición Un estudiante intenta realizar una nueva reserva cuando ya posee el máximo establecido de reservas activas.
+
+Métrica Cantidad de reservas activas por estudiante.
+
+Umbral /
+
+criterio El estudiante no puede superar las 2 reservas activas establecidas como límite.
+
+Fuente H-02, F-01 y H-06, F-05 — Nota de coordinación y restricciones del patrocinador. Se estableció como restricción un máximo de 2 reservas activas por estudiante.
+
+Método de
+
+verificación Registrar 2 reservas activas para un estudiante e intentar realizar una tercera. Comprobar que no se permita superar el límite establecido.
+
+
+Preguntas pendientes
+
+· ¿Cómo se determina el orden de prioridad cuando dos solicitudes llegan de manera simultánea?
+
+· ¿Cómo debe notificarse al estudiante cuando intenta superar las 2 reservas activas?
+
+· ¿Cuál es la información mínima del estudiante que debe estar disponible para el tutor o tutora?
+
+· ¿Qué información descriptiva de la materia y del tutor necesita el estudiante antes de confirmar una reserva?
+
+· ¿Cuál es el procedimiento para cancelar o reprogramar una tutoría fuera de las condiciones establecidas?
