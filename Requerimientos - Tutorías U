@@ -1,1 +1,108 @@
+Requerimientos funcionales
+RF-001 - Consultar disponibilidad por materia
+ID: RF-001
 
+Nombre: Consultar disponibilidad por materia
+
+Actor: Estudiante
+
+Descripción: El sistema debe permitir al estudiante consultar los espacios de tutoría disponibles para una materia seleccionada.
+
+Resultado esperado: Se muestran los espacios de tutoría disponibles asociados con la materia seleccionada.
+
+Fuente: El estudiante necesita conocer qué tutor atiende esa materia y qué espacios de tutoría siguen disponibles. Fuente F-01 y F-03 del mini proyecto Tutorías U.
+
+Método de verificación: Seleccionar una materia y comprobar que se muestran únicamente los espacios disponibles correspondientes a esa materia.
+
+
+
+RF-002 - Crear una reserva
+ID: RF-002
+
+Nombre: Crear una reserva
+
+Actor: Estudiante
+
+Descripción: El sistema debe permitir al estudiante crear una reserva para un espacio de tutoría disponible.
+
+Resultado: La reserva queda registrada y el sistema muestra una confirmación visible de la operación.
+
+Fuente: El estudiante necesita saber inmediatamente si la reserva quedó confirmada. Fuente F-03 del mini proyecto Tutorías U.
+
+Método de verificación: Seleccionar un espacio disponible, crear la reserva y comprobar que la reserva queda registrada y se muestra una confirmación visible.
+
+RF-003 - Cancelar una reserva propia
+ID: RF-003
+
+Nombre: Cancelar una reserva propia
+
+Actor: Estudiante
+
+Descripción: El sistema debe permitir al estudiante cancelar una reserva propia que se encuentre activa antes del inicio de la sesión.
+
+Resultado esperado: La reserva queda cancelada y el espacio de tutoría vuelve a estar disponible.
+
+Fuente: El estudiante puede cancelar únicamente sus propias reservas activas antes del inicio de la sesión y, al cancelarse una reserva, el espacio vuelve a estar disponible. Fuentes RN-07 y RN-09 del mini proyecto Tutorías U.
+
+Método de verificación: Seleccionar una reserva propia activa antes del inicio de la sesión, cancelarla y comprobar que la reserva queda cancelada y el espacio vuelve a estar disponible.
+
+
+
+
+
+
+
+Requerimientos no funcionales
+
+
+
+
+RNF-001 - Accesibilidad
+ID: RNF-001
+
+Atributo: Accesibilidad
+
+condición: Cuando el usuario utilice las vistas principales del sistema, estas deben permitir navegación mediante teclado.
+
+Métrica: Navegación mediante teclado y uso correcto.
+
+criterio: Las vistas principales deben ser navegables mediante teclado y los controles de formulario deben tener etiquetas asociadas.
+
+Fuente: Criterio RNF-02 de los criterios no funcionales didácticos del mini proyecto Tutorías U.
+
+Método de verificación: Navegar por las vistas principales utilizando únicamente el teclado y comprobar que los controles pueden utilizarse correctamente y que los campos de formulario poseen etiquetas asociadas.
+
+
+
+RNF-002 - Seguridad
+ID: RNF-002
+
+Atributo: Seguridad
+
+condición: Cuando el sistema gestione usuarios y rutas protegidas, las contraseñas deben estar protegidas y las acciones protegidas deben requerir autenticación y autorización.
+
+Métrica: Almacenamiento de contraseñas y control de acceso a rutas protegidas.
+
+criterio: Las contraseñas no deben almacenarse en texto plano y las rutas protegidas deben requerir autenticación y autorización según el rol correspondiente.
+
+Fuente: Criterio RNF-04 y regla RN-10 del mini proyecto Tutorías U.
+
+Método de verificación: Revisar el almacenamiento de las contraseñas y comprobar que no están en texto plano. Intentar acceder a una ruta protegida sin autenticación y con un rol no autorizado, comprobando que el acceso sea rechazado.
+
+
+
+
+RNF-003 - Usabilidad
+ID: RNF-003
+
+Atributo: Usabilida
+
+condición: Cuando el usuario realice una operación en los flujos principales del sistema, el sistema debe informar el estado de la operación.
+
+Métrica: Presencia de mensajes de carga, éxito y error en los flujos principales.
+
+criterio: Los flujos principales deben mostrar un estado de carga, un mensaje de éxito cuando la operación se complete correctamente y un mensaje de error cuando la operación falle.
+
+Fuente: Criterio RNF-01 de los criterios no funcionales didácticos del mini proyecto Tutorías U.
+
+Método de verificación: Ejecutar una operación de consulta o reserva, comprobar que se muestra el estado de carga durante el proceso y verificar que se muestra un mensaje de éxito cuando la operación finaliza correctamente. Repetir la prueba provocando un error y comprobar que se muestra un mensaje de error comprensible.
